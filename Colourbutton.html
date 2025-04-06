@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Button</title>
+    <style>
+        #colorButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="colorButton">Click Me</button>
+    <script>
+        document.getElementById("colorButton").addEventListener("click", function() {
+            let colors = ["red", "green", "blue", "purple", "orange"];
+            let currentColor = this.style.backgroundColor;
+            let newColor = colors[Math.floor(Math.random() * colors.length)];
+            while (newColor === currentColor) {
+                newColor = colors[Math.floor(Math.random() * colors.length)];
+            }
+            this.style.backgroundColor = newColor;
+        });
+    </script>
+</body>
+</html>
